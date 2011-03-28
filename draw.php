@@ -24,7 +24,7 @@ for ($i=0;$i<720;$i++)
         imagesetpixel($img,$i,$j,$ink);
         }
 $ink1 = imagecolorallocate($img, 255, 0, 0);
-$ink2 = imagecolorallocate($img, 255, 0, 0);		
+$ink2 = imagecolorallocate($img, 255, 0, 0);
 imagesetpixel($img,100,100,$ink1);*/
 $x1=20;
 $x2=80;
@@ -42,11 +42,11 @@ $y1=280;
 $y2=20;
 $x1=$x1+120;
 $x2=$x2+120;
-echo("λεβϋε x1-$x1 x2-$x2 y1-$y1 y2-$y2 <br>");
+echo("Π»ΠµΠ²Ρ‹Πµ x1-$x1 x2-$x2 y1-$y1 y2-$y2 <br>");
 }
 else {$y1=20; $y2=280; $x1=$x1+120;
 $x2=$x2+120;
-echo(" οπΰβϋε x1-$x1 x2-$x2 y1-$y1 y2-$y2 <br>");}
+echo(" ΠΏΡ€Π°Π²Ρ‹Πµ x1-$x1 x2-$x2 y1-$y1 y2-$y2 <br>");}
 $b++;
 //echo("x1-$x1 x2-$x2 y1-$y1 y2-$y2 <br>");
 }
@@ -59,5 +59,5 @@ imagedestroy($img);*/
 imagejpg($image);
 imagedestroy($image);*/
 
-		
+
 ?>

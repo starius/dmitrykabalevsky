@@ -1,5 +1,5 @@
 <?include 'config.php';
-if(!empty($_POST['nameavt'])) {                   
+if(!empty($_POST['nameavt'])) {
     $nameavt=$_POST['nameavt'];
     $age=stripslashes(trim(htmlspecialchars($_POST['age'],ENT_QUOTES)));
     $phone=stripslashes(trim(htmlspecialchars($_POST['phone'],ENT_QUOTES)));
@@ -26,22 +26,22 @@ if(!empty($_POST['nameavt'])) {
    $from .= "Content-type: text/html; charset=windows-1251\r\n";
    if ($dog!=false){
   //проверяет как заканчивается введенное мыло
-  
+
            $emailot="dmitrykabalevsky@gmail.com";  // мыло кому отправляем
            $zagolovok="Заявка ".$name; //заголовок письма
            $msg="<html><body><table><tr><td>ФИО</td><td>$nameavt</td></tr><tr><td>Возраст</td><td>$age</td></tr><tr><td>Телефон</td><td>$phone</td></tr><tr><td>Е-mail</td><td>$email</td></tr><tr><td>Адрес</td><td>$address</td></tr><tr><td>Номинация</td><td>$nomination</td> <tr><td>Возрастная группа</td><td>$old</td></tr> <tr><td>Ф.И.О. преподавателя</td><td>$name1</td></tr> <tr><td>Телефон</td><td>$phone1</td></tr> <tr><td>Программа выступления. Указать хронометраж</td><td>$pr</td></tr> <tr><td>Телефон</td><td>$phone2</td></tr><tr><td>Е-mail</td><td>$email1</td></tr><tr><td>Адрес учебного заведения</td><td>$address1</td></tr><tr><td>Руководитель учебного заведения</td><td>$name2</td></tr></table></body></html>"; //формируем строку с данными для отправки в письме
            mail($emailot, $zagolovok, $msg, $from); //функция отправки
-           //echo 'Спасибо! Ваше письмо отправлено.'; 
-		   }
+           //echo 'Спасибо! Ваше письмо отправлено.';
+           }
    $sql_1 = "INSERT INTO application (nameavt, age, phone, email, address, nomination, old, name1, phone1, address1, phone2, phone3, email1, name2, pr, foto) values ('$nameavt', '$age', '$phone', '$email', '$address', '$nomination', '$old', '$name1', '$phone1', '$address1', '$phone2', '$phone3', '$email1', '$name2', '$pr', '$foto')";
    mysql_query($sql_1) or die(mysql_error());
-			$fl=fopen("list.txt", "a+"); 
-			$data="$nameavt, $age, $phone, $email, $address, $nomination, $old, $name1, $phone1, $address1, $phone2, $phone3, $email1, $name2, $pr \n ";
-			fputs($fl, $data);
-			fclose($fl);
-			header ("Location: listpart.php");
+            $fl=fopen("list.txt", "a+");
+            $data="$nameavt, $age, $phone, $email, $address, $nomination, $old, $name1, $phone1, $address1, $phone2, $phone3, $email1, $name2, $pr \n ";
+            fputs($fl, $data);
+            fclose($fl);
+            header ("Location: listpart.php");
      }
-	 
+
 
 ?>
 
