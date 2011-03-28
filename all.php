@@ -1,4 +1,5 @@
-<? 
+<?php
+
 include 'config.php';
 echo ("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /></head><body>Участники<br>");  
 $sql5 = "SELECT id, nameavt FROM application";
