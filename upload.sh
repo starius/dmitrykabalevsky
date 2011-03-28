@@ -1,6 +1,4 @@
 COOKIES='/tmp/dm.cookies'
-#WGET=wget --no-check-certificate --keep-session-cookies \
-#    --load-cookies=$COOKIES --save-cookies=$COOKIES
 CURL="curl -b $COOKIES -c $COOKIES --insecure -H 'Expect:' "
 
 read -s -p "Web interface password: " web_password
